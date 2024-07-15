@@ -1,0 +1,42 @@
+use movie-fashion-recommender
+movie-fashion-recommender> db.createCollection('movies')
+movie-fashion-recommender> db.createCollection('products')
+movie-fashion-recommender> db.createCollection('users')
+
+db.movies.insertMany([
+  {
+    title: 'Movie X',
+    keywords: ['action', 'hero', 'adventure'],
+    actors: ['Actor A', 'Actor B']
+  },
+  {
+    title: 'Movie Y',
+    keywords: ['drama', 'romance'],
+    actors: ['Actor C', 'Actor D']
+  }
+]);
+
+db.products.insertMany([
+  {
+    name: 'Outfit 1',
+    description: 'Inspired by Movie X',
+    image: 'https://via.placeholder.com/150',
+    keywords: ['action', 'hero'],
+    price: 49.99
+  },
+  {
+    name: 'Outfit 2',
+    description: 'Inspired by Movie Y',
+    image: 'https://via.placeholder.com/150',
+    keywords: ['drama', 'romance'],
+    price: 59.99
+  }
+]);
+
+db.users.insertOne({
+  name: 'John Doe',
+  email: 'john@example.com',
+  password: 'password123',
+  preferences: [],
+  history: []
+});
